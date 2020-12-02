@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :items
+  resources :items do
+      resources :comments
+  end
   devise_for :users
 
   root 'items#index'

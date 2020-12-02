@@ -9,6 +9,7 @@ class ItemsController < ApplicationController
 
   # GET /items/1
   def show
+    @comment = Comment.new
   end
 
   # GET /items/new
