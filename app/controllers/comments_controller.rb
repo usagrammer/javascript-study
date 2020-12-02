@@ -25,10 +25,11 @@ class CommentsController < ApplicationController
     @comment = current_user.comments.new(comment_params)
 
     if @comment.save
-      redirect_to item_path(@item), notice: 'Comment was successfully created.'
+      render json: { comment: @comment, user: @comment.user}  ## jsありの場合
     else
       render template: "items/show"
     end
+
   end
 
   # PATCH/PUT /comments/1

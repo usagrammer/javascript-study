@@ -22,7 +22,7 @@
 
 <h1>New Comment for this Item</h1>
 
-<%= form_with(model: [@item, @comment], local: true) do |form| %>
+<%= form_with(model: [@item, @comment], local: true, id: 'comment-form', data: {item_id: @item.id}) do |form| %>
   <% if @comment.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this item from being saved:</h2>
@@ -50,13 +50,16 @@
 <h1>Comments for this Item</h1>
 
   <div id="comments">
-    <% @item.comments.each do |comment|%>
+    <% @item.comments.reverse.each do |comment|%>
       <div class="comment" style="border: 1px solid black; margin: 1rem 0; padding: 0.5rem; display: inline-block;">
         <div class="comment-user-nickname">
           <%= comment.user.nickname %>さんのコメント
         </div>
         <div class="comment-content">
           <%= comment.content %>
+        </div>
+        <div class="comment-created_at">
+          <%= comment.created_at %>
         </div>
       </div>
       <br>
