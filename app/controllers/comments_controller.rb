@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
   before_action :set_item, only: [:create, :update, :destroy]
 

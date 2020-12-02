@@ -22,6 +22,8 @@
 
 <h1>New Comment for this Item</h1>
 
+<% if user_signed_in? %>
+
 <%= form_with(model: [@item, @comment], local: true, id: 'comment-form', data: {item_id: @item.id}) do |form| %>
   <% if @comment.errors.any? %>
     <div id="error_explanation">
@@ -43,6 +45,13 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+<% end %>
+
+
+<% else %>
+
+コメントするにはログインしてください。
+
 <% end %>
 
 <hr>
