@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<button id="hello-button">こんにちわ！</button>
+<h2 id="hello-user-nickname"></h2>
+
+<hr>
+
 <h1>Items</h1>
 
 <table>
@@ -29,3 +34,12 @@
 <br>
 
 <%= link_to 'New Item', new_item_path %>
+
+<br>
+
+<% if user_signed_in? %>
+  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
+<% else %>
+  <%= link_to 'ログイン', new_user_session_path, class: "login" %>
+  <%= link_to '新規登録', new_user_registration_path, class: "sign-up" %>
+<% end %>
