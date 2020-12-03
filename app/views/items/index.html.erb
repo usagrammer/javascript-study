@@ -26,13 +26,6 @@
         <td><%= link_to 'Show', item %></td>
         <td><%= link_to 'Edit', edit_item_path(item) %></td>
         <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td>
-          <% if Like.find_by(item_id: item.id, user_id: current_user&.id) %>
-            <%= link_to '★', item_likes_path(item), method: :delete,  class: "like-button", data: {like: true, item_id: item.id} %>
-          <% else %>
-            <%= link_to '★', item_likes_path(item), method: :post,  class: "like-button", data: {like: false, item_id: item.id} %>
-          <% end %>
-        </td>
       </tr>
     <% end %>
   </tbody>
