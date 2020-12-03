@@ -1,9 +1,6 @@
 function comment_ajax() {
   // コメントフォーム
-  const commentForm = document.getElementById("comment-form");
-
-  // こんにちわボタンが存在しなかったらここで終了（特定のページのみcomment.jsを動作させるための処理）
-  if (!commentForm) return null;
+  const commentForm = document.getElementById("commentForm");
 
   commentForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -44,7 +41,7 @@ function comment_ajax() {
                       </div>
                       <br>
                      `;
-        const commentsField = document.getElementById("comments");
+        const commentsField = document.getElementById("comment");
         commentsField.insertAdjacentHTML("afterbegin", html);
         // 入力欄をリセット
         commentForm.reset();
