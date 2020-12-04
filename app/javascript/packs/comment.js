@@ -2,9 +2,6 @@ function comment_ajax() {
   // コメントフォーム
   const commentForm = document.getElementById("comment-form");
 
-  // こんにちわボタンが存在しなかったらここで終了（特定のページのみcomment.jsを動作させるための処理）
-  if (!commentForm) return null;
-
   commentForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const itemId = commentForm.getAttribute("data-item-id");
