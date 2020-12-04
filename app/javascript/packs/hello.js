@@ -1,13 +1,13 @@
 function hello_ajax() {
   // こんにちわボタン
-  const helloButton = document.getElementById("hello_button");
+  const helloButton = document.getElementById("hello-button");
 
   helloButton.addEventListener("click", (e) => {
     const XHR = new XMLHttpRequest();
 
     // openでリクエストを初期化する
     // 動かしたいコントローラのアクションに対応するルーティングを指定する
-    XHR.open("GET", "/user/name", true);
+    XHR.open("GET", "/users/name", true);
 
     // レスポンスのタイプを指定
     XHR.responseType = "json";
@@ -19,7 +19,7 @@ function hello_ajax() {
     XHR.onload = () => {
       if (XHR.status == 200) {
         // ルーティングーコントローラービューの間でエラーが発生しなかった場合
-        const nickname = XHR.response.name;
+        const nickname = XHR.response.nickname;
         const nicknameField = document.getElementById("hello-user-nickname");
         nicknameField.innerText = nickname + "さん！";
       } else {

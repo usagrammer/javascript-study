@@ -33,11 +33,9 @@
 
 <br>
 
-<%= link_to 'New Item', new_item_path %>
-
-<br>
-
 <% if user_signed_in? %>
+  <%= link_to 'New Item', new_item_path %>
+  <br>
   <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
 <% else %>
   <%= link_to 'ログイン', new_user_session_path, class: "login" %>
