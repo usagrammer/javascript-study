@@ -1,6 +1,6 @@
 function comment_ajax() {
   // コメントフォーム
-  const commentForm = document.getElementById("comment-form");
+  const commentForm = document.getElementById("commentForm");
 
   commentForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -9,7 +9,7 @@ function comment_ajax() {
 
     // openでリクエストを初期化する
     // 動かしたいコントローラのアクションに対応するルーティングを指定する
-    XHR.open("POST", `/items/${itemId}/comments`, true);
+    XHR.open("POST", `/items/${itemId}/comment`, true);
     const formData = new FormData(commentForm);
 
     // レスポンスのタイプを指定

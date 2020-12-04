@@ -1,13 +1,13 @@
 function hello_ajax() {
   // こんにちわボタン
-  const helloButton = document.getElementById("hello-button");
+  const helloButton = document.getElementById("hello_button");
 
   helloButton.addEventListener("click", (e) => {
     const XHR = new XMLHttpRequest();
 
     // openでリクエストを初期化する
     // 動かしたいコントローラのアクションに対応するルーティングを指定する
-    XHR.open("GET", "/users/name", true);
+    XHR.open("GET", "/user/name", true);
 
     // レスポンスのタイプを指定
     XHR.responseType = "json";
