@@ -2,9 +2,6 @@ function hello_ajax() {
   // こんにちわボタン
   const helloButton = document.getElementById("hello-button");
 
-  // こんにちわボタンが存在しなかったらここで終了（特定のページのみhello.jsを動作させるための処理）
-  if (!helloButton) return null;
-
   helloButton.addEventListener("click", (e) => {
     const XHR = new XMLHttpRequest();
 

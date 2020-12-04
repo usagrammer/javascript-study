@@ -26,7 +26,7 @@ class CommentsController < ApplicationController
     @comment = current_user.comments.new(comment_params)
 
     if @comment.save
-      render json: { comment: @comment, user: @comment.user}  ## jsありの場合
+      render json: { comment: @comment, user: @comment.user }
     else
       render template: "items/show"
     end

@@ -1,14 +1,15 @@
 function comment_ajax() {
   // コメントフォーム
   const commentForm = document.getElementById("comment-form");
-
-  // こんにちわボタンが存在しなかったらここで終了（特定のページのみcomment.jsを動作させるための処理）
-  if (!commentForm) return null;
+  console.log("comment.js");
 
   commentForm.addEventListener("submit", (e) => {
     e.preventDefault();
+
     const itemId = commentForm.getAttribute("data-item-id");
     const XHR = new XMLHttpRequest();
+
+    debugger;
 
     // openでリクエストを初期化する
     // 動かしたいコントローラのアクションに対応するルーティングを指定する
@@ -26,6 +27,7 @@ function comment_ajax() {
       const commentFormButton = document.querySelector('input[type="submit"]');
       // 送信ボタンが押せなくなるのを無効化
       commentFormButton.removeAttribute("disabled");
+
       if (XHR.status == 200) {
         // ルーティングーコントローラービューの間でエラーが発生しなかった場合
         const comment = XHR.response.comment;
